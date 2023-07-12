@@ -1,0 +1,19 @@
+<div class="game_block">
+    <h2>Орел или Решка</h2>
+
+    <div *ngIf="res !== null">
+        <p>Ваш выбор: {{ user_choice }}</p>
+        <p>Монета упала стороной: {{ res }}</p>
+        <p>{{ res_txt }}</p>
+    </div>
+
+    <div *ngIf="res === null">
+        <label>Выберите орла или решку:</label>
+        <select id="choice" [(ngModel)]="user_choice">
+            <option value="Орел">Орел</option>
+            <option value="Решка">Решка</option>
+        </select>
+        <br>
+        <button (click)="flipCoin()">Бросить монетку</button>
+    </div>
+</div>
